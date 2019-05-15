@@ -1,51 +1,63 @@
+
+
 <p align="center">
-  <img src="https://i.imgur.com/cf2h0Vn.png" alt="BabySploit"/></br>
+  <a href="https://pepy.tech/project/babysploit"><img src="https://pepy.tech/badge/babysploit/week"></a>
+  <a href="https://pepy.tech/project/babysploit"><img src="https://pepy.tech/badge/babysploit/month"></a>
+  <a href="https://pepy.tech/project/babysploit"><img src="https://pepy.tech/badge/babysploit"></a></br>
+  <a href="https://github.com/M4cs/BabySploit/network"><img src="https://img.shields.io/github/forks/M4cs/BabySploit.svg" alt="Forks"></a>
+  <a href="https://github.com/M4cs/BabySploit/stargazers"><img src="https://img.shields.io/github/stars/M4cs/BabySploit.svg" atl="Stars"></a>
+  <a href="https://github.com/M4cs/BabySploit/issues"><img src="https://img.shields.io/github/issues/M4cs/BabySploit.svg" alt="Issues"></a>
+  <a href=""><img src="https://img.shields.io/badge/version-1.4.4-green.svg?syle=popout"></a>
+  <a href="https://github.com/M4cs/BabySploit/blob/master/LICENSE.md"><img src="https://img.shields.io/github/license/M4cs/BabySploit.svg" alt="License"></a>
+  <a href="http://www.python.org/download/"><img alt="Python 3.6+" src="https://img.shields.io/badge/Python-3.6+-yellow.svg"></a>
+  <a href="https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FM4cs%2FBabySploit"><img src="https://img.shields.io/twitter/url/https/github.com/M4cs/BabySploit.svg?style=popout" alt="Twitter"></a>
+  <a href="https://discord.gg/7VN9VZe"><img src="https://img.shields.io/badge/discord-join-blue.svg?syle=popout"></a>
+
+<p align="center">
+  <b>Made For Kali Linux. No Support For Other Distros If There Are Problems.</b>
+  </br><a href="https://twitter.com/maxbridgland" alt="Twitter Link"><b>Developed by @maxbridgland</b></a></br>
+  <a href="https://bit.ly/2Ke9uVi">Donate</a>
 </p>
-
-# BabySploit
-[![GitHub forks](https://img.shields.io/github/forks/M4cs/BabySploit.svg)](https://github.com/M4cs/BabySploit/network)
-[![GitHub stars](https://img.shields.io/github/stars/M4cs/BabySploit.svg)](https://github.com/M4cs/BabySploit/stargazers)
-[![GitHub license](https://img.shields.io/github/license/M4cs/BabySploit.svg)](https://github.com/M4cs/BabySploit/blob/master/LICENSE.md)
-[![GitHub issues](https://img.shields.io/github/issues/M4cs/BabySploit.svg)](https://github.com/M4cs/BabySploit/issues)
-[![Twitter](https://img.shields.io/twitter/url/https/github.com/M4cs/BabySploit.svg?style=popout)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FM4cs%2FBabySploit)
-[![Discord](https://img.shields.io/badge/discord-join-blue.svg?syle=popout)](https://discord.gg/7VN9VZe)
-
-Tested on Kali Linux. Should work with all Debian based distros (and other ones if you have the right packages installed)
-
-Join the Discord For Support: https://discord.gg/7VN9VZe
-
-BabySploit is a penetration testing framework aimed at making it easy to learn how to use bigger, 
-more complicated frameworks like Metasploit. With a very easy to use UI and toolkit, anybody
-from any experience level will find use out of BabySploit. Below are some screenshots of the framework.
 <p align="center">
-  <img src="https://image.prntscr.com/image/l35Yo-q5SHKBSWvOLb_mig.png" alt="Welcome"/></br>
+  <a href="https://discord.gg/7VN9VZe"><img src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/27090541/8dd5c907f2a0eecb73dc6a4776fc9a25878ebcdd.png" alt="Forks"></a>
+
+<p align="center">
+  <b>BabySploit is a penetration testing toolkit aimed at making it easy to learn how to use bigger,</br> 
+more complicated frameworks like Metasploit. With a very easy to use UI and toolkit, anybody</br>
+from any experience level will find use out of BabySploit. Below are some screenshots of the framework.</b>
 </p>
 
 # Installation Instructions:
 
-BabySploit is best run out of the home directory so to clone it there run:
-```
-git clone git://github.com/M4cs/BabySploit ~/BabySploit
-```
+## Using Pip
 
-After cloning the installation you must install some pre-requisites. **If you are on Kali you should already have all of these installed but it doesn't hurt to do so anyways just in case**. Do so by running the following:
 ```
 sudo apt-get update
-sudo apt-get install exploitdb netcat nmap php7.0 perl -y
-wget http://owl.phy.queensu.ca/~phil/exiftool/Image-ExifTool-11.17.tar.gz
-tar xf Image-ExifTool-11.17.tar.gz
-cd Image-ExifTool-11.17
-perl MakeFile
-make test
-sudo make install
-cd ..
-sudo rm -rf Image-ExifTool-11.17
+sudo apt-get upgrade
+sudo apt-get install exploitdb netcat nmap perl php7.0 
+pip3 install babysploit
+babysploit
 ```
 
-After installing these binaries you must install required Python 3 modules. To do so run the following:
+In order to use `search` command you must follow steps [here](https://www.exploit-db.com/searchsploit/#install) to install the searchsploit binary!
+
+## Building From Source
 ```
-*from within the BabySploit Directory*
-pip3 install -r requirements.txt --user
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install exploitdb netcat nmap perl php7.0
+git clone https://github.com/M4cs/BabySploit.git
+cd BabySploit/
+python3 setup.py install
+babysploit
+```
+
+## Docker Run Command
+
+```
+docker run --rm -idt --name babysploit xshuden/babysploit    # container is deleted when you're done
+OR
+docker run -idt --name babysploit xshuden/babysploit
 ```
 
 # Getting Started:
@@ -79,7 +91,7 @@ until you use the `reset` command which resets the saved configuration.
 In order to run a tool all you have to do is enter the name of the tool into BabySploit. You can use the `tools` command
 to display a menu with all the currently availble tools. If we run tools we get the depiction:
 <p align="center">
-  <img src="https://image.prntscr.com/image/S-BrY0paRcGoliP1NPg5fA.png" alt="Tools"/>
+  <img src="https://image.prntscr.com/image/dMlUOjFnQk_KSyru1gTQ2A.png" alt="Tools"/>
 </p>
 *this depiction may be outdated*
 
@@ -105,12 +117,16 @@ into BabySploit. Ex: `ftpbruteforce` - runs the ftpbruteforce tool.
   - Datasploit (In The Works)
   - Censys Lookup
   - DNS Lookup
+  - Raccoon
+  - Cloudflare Bypasser
   
 ### Exploitation:
   
   - Searchsploit
   - ReverseShell Wizard
-
+  - FTP Buffer Overflow Scan
+  - WPSeku WordPress Vuln Scanner
+  
 ### Post Exploitation:
 
   - In The Works
@@ -118,6 +134,7 @@ into BabySploit. Ex: `ftpbruteforce` - runs the ftpbruteforce tool.
 ### Bruteforcing:
 
   - FTP Bruteforcer
+  - WPSeku WordPress Login Bruteforce
   
 ### Phishing:
 
@@ -126,6 +143,7 @@ into BabySploit. Ex: `ftpbruteforce` - runs the ftpbruteforce tool.
 ### Crypto/Stegano:
 
   - MetaKiller
+  - PDFMeta
   
 # Contributing
 
@@ -134,3 +152,11 @@ Feel free to contribute by making plugins or fixing bugs with a Pull Request. Al
 Licensed Under [MIT](https://github.com/M4cs/BabySploit/blob/master/LICENSE.md).
 
 Copyright (c) 2018 Syndicated Intelligence
+
+# Credits
+
+[@linux_choice](https://github.com/thelinuxchoice) for BlackEye sites and base.
+
+[@M4ll0k](https://github.com/m4ll0k) for WPSeku.
+
+[@exploitdb](https://github.com/exploitdb) for Searchsploit.

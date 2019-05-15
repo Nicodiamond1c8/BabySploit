@@ -1,22 +1,14 @@
 def welcome():
-    import socket, requests, netifaces
-    try:
-      teddy = requests.get("https://hastebin.com/raw/oyifedagib", timeout=3).text
-      print(teddy)
-    except requests.exceptions.ReadTimeout:
-      pass
+    import socket
     banner = """
                      BabySploit!
               Developed by @maxbridgland
           https://github.com/M4cs/BabySploit
         """
-    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    s.connect(("8.8.8.8", 80))
-    ip = s.getsockname()[0]
-    s.close()
+    gw = socket.gethostname()
+    print("          [i] Default Gateway: %s [i]" % gw)
     print(banner)
     print("")
-    print("          [i] Current Local IP: %s [i]" % ip)
 
 def tools():
     from terminaltables import SingleTable
@@ -29,7 +21,9 @@ def tools():
       ['nmap', 'nmap port scanner tool'],
       ['iplookup', 'ip info tool'],
       ['dnslookup', 'dns lookup tool'],
-      ['censyslookup', 'censys api lookup | req api creds']
+      ['censyslookup', 'censys api lookup | req api creds'],
+      ['raccoon', 'use raccoon scanner tool | command: raccoon --help'],
+      ['cfbypass', 'cloudflare bypasser']
     ]
     table = SingleTable(infotable, "Information Gathering")
     print("")
@@ -38,7 +32,9 @@ def tools():
     exploittable = [
       ['\nTool', '\nDescription'],
       ['searchsploit', 'search available exploits (use search command)'],
-      ['reverseshell', 'reverse shell tool for creating payloads']
+      ['reverseshell', 'reverse shell tool for creating payloads'],
+      ['ftpvulnscan', 'check for ftp buffer overflow'],
+      ['wpseku', 'wordpress vulnerability scanner']
     ]
     exptable = SingleTable(exploittable, "Exploitation")
     print(exptable.table)
@@ -57,7 +53,7 @@ def tools():
     ]
     cryptotable = [
       ['\nTool', '\nDescription'],
-      ['metakiller', 'grab metadata of an image'],
+      ['pdfmeta', 'pdf meta data']
     ]
     cryptable = SingleTable(cryptotable, "Cryptography/Steganography")
     bftable = SingleTable(bruteforcetable, "Bruteforcing")
